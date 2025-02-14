@@ -31,4 +31,6 @@ register_post_type('recipe', [
     'rewrite' => [
         'slug' => 'recettes',
     ],
+    'supports' => ['title','editor','excerpt'],
+
 ]);
