@@ -19,3 +19,16 @@ add_action('wp_enqueue_scripts', function () {
     // Remove inline global CSS on the front end.
     wp_dequeue_style('global-styles');
 }, 20);
+
+
+// Enregistrer de nouveau 'type de contenus' qui seront stockés dans la table 'wp_posts' avec un identifiant de type specifique dansl a colonne 'post_type'
+register_post_type('recipe', [
+    'label' => 'Recettes',
+    'description' => 'Les recettes ramenés de nos périples',
+    'public' => true,
+    'menu_position' => 6,
+    'menu_icon' => 'dashicons-carrot',
+    'rewrite' => [
+        'slug' => 'recettes',
+    ],
+]);
