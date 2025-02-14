@@ -8,7 +8,23 @@
     <title><?= wp_title(' - ', false, 'right') . get_bloginfo('name') ?></title>
 </head>
 <body>
-<h1><?= get_bloginfo('name') ?></h1>
-<p><?= get_bloginfo('description') ?></p>
+<header>
+    <h1><?= get_bloginfo('name') ?></h1>
+    <p><?= get_bloginfo('description') ?></p>
+</header>
+<main>
+    <?php
+    //On ouvre 'la Boucle' (The loop), la structure de contrôle de contenu propre de WordPress:
+    if (have_posts()): while (have_posts()): the_post(); ?>
+        <h2><?= get_the_title(); ?></h2>
+        <div >
+            <?= get_the_content();?>
+        </div>
+    <?php
+    // On ferme 'la Boucle' (The loop):
+    endwhile; else: ?>
+        <p>Il n’a pas de contenu à afficher.</p>
+    <?php endif; ?>
+</main>
 </body>
 </html>
