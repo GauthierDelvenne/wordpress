@@ -6,7 +6,7 @@
     if (have_posts()): while (have_posts()): the_post(); ?>
         <h2><?= get_the_title(); ?></h2>
         <div >
-            <?= get_the_content();?>
+            <?php the_content();?>
         </div>
     <?php
     // On ferme 'la Boucle' (The loop):
