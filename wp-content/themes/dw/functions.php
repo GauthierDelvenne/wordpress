@@ -36,3 +36,17 @@ register_post_type('recipe', [
     'supports' => ['title','editor','excerpt', 'thumbnail'],
 
 ]);
+
+add_theme_support( 'post-thumbnails', [ 'trip' ] );
+
+register_post_type( 'trip', [
+    'label' => 'Trip',
+    'description' => 'Nos différents voyages',
+    'public' => true,
+    'menu_position' => 7,
+    'menu_icon' => 'dashicons-palmtree',
+    'rewrite'=> [
+        'slug' => 'trip',
+    ],
+    'supports' => ['title','editor','excerpt', 'thumbnail'],
+]);
