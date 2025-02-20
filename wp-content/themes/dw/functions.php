@@ -33,7 +33,7 @@ register_post_type('recipe', [
     'rewrite' => [
         'slug' => 'recettes',
     ],
-    'supports' => ['title','editor','excerpt', 'thumbnail'],
+    'supports' => ['title','editor','excerpt', 'thumbnail', 'custom-fields'],
 
 ]);
 
@@ -48,5 +48,5 @@ register_post_type( 'trip', [
     'rewrite'=> [
         'slug' => 'trip',
     ],
-    'supports' => ['title','editor','excerpt', 'thumbnail'],
+    'supports' => ['title','editor','excerpt', 'thumbnail', 'custom-fields'],
 ]);

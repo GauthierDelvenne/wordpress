@@ -38,7 +38,7 @@
         <aside class="recipe__ingredients">
             <div>
             <h3>Ingrédients</h3>
-            <p>À completer ...</p>
+            <p><?php echo get_post_meta( get_the_ID(), 'ingredient', true ); ?></p>
             </div>
             <figure class="recipe__fig">
                 <?= get_the_post_thumbnail(size: 'medium', attr: ['class' => 'recipe__img']); ?>

@@ -47,12 +47,8 @@ if (have_posts()): while (have_posts()): the_post(); ?>
     <div class="trip">
         <aside class="trip__location">
             <div>
-                <h3>Le village au multiple couleur</h3>
-                <p>Les maisons de Procida sont colorées pour plusieurs raisons. Traditionnellement, les pêcheurs
-                    peignaient leurs maisons avec des couleurs vives afin de pouvoir les repérer facilement depuis la
-                    mer. Ces teintes variées facilitent aussi l’orientation dans les ruelles étroites de l’île et
-                    ajoutent une touche de charme et d’authenticité au paysage. Aujourd’hui, ces couleurs font partie
-                    intégrante de l’identité culturelle et touristique de Procida.
+                <h3><?php echo get_post_meta( get_the_ID(), 'titre', true ); ?></h3>
+                <p><?php echo get_post_meta( get_the_ID(), 'paragraph', true ); ?>
                 </p>
             </div>
             <figure class="trip__fig">
@@ -70,7 +66,7 @@ if (have_posts()): while (have_posts()): the_post(); ?>
 <?php
 endwhile;
 else: ?>
-    <p>Cette recette n’existe pas...</p>
+    <p>Ce voyage n’existe pas...</p>
 <?php endif; ?>
 
 <?php get_footer() ?>
